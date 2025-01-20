@@ -22,19 +22,18 @@
                 </div>
                 <span>or use your email for registration</span>
                 <div class="infield" id="signup-form">
-                    <input type="text" placeholder="Name" />
+                    <input type="text" placeholder="Name" id="name-signup"/>
                     <label></label>
                 </div>
                 <div class="infield">
-                    <input id="email" type="email" placeholder="Email" name="email"/>
+                    <input type="email" placeholder="Email" name="email" id="email-signup" />
                     <label></label>
                 </div>
                 <div class="infield">
-                    <input id="password" type="password" placeholder="Password" />
+                    <input type="password" placeholder="Password" id="password-signup"/>
                     <label></label>
                 </div>
-                <button type="submit"><a href="after_login.html" >Sign Up</a></button>
-                <div id="message"></div>
+                <button id="signup-button">Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
@@ -47,15 +46,15 @@
                 </div>
                 <span>or use your account</span>
                 <div class="infield">
-                    <input type="email" placeholder="Email" name="email"/>
+                    <input type="email" placeholder="Email" name="email" id="email-signin"/>
                     <label></label>
                 </div>
                 <div class="infield">
-                    <input type="password" placeholder="Password" />
+                    <input type="password" placeholder="Password" id="password-signin" />
                     <label></label>
                 </div>
                 <a href="#" class="forgot">Forgot your password?</a>
-               <button ><a href="after_login.html" >Sign In</a></button>
+               <button id="signin-button">Sign In</button>
             </form>
         </div>
         <div class="overlay-container" id="overlayCon">
@@ -76,44 +75,7 @@
     </div>
     
 
-    
-
-    <!-- js code -->
-    <script src = "sign.js"> </script>
-
-    
-    
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
-        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
-        
-
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyAhn14EKHrbFFqI0pIG8iefRny2M2SXlOs",
-          authDomain: "e-commerce-22108.firebaseapp.com",
-          projectId: "e-commerce-22108",
-          storageBucket: "e-commerce-22108.firebasestorage.app",
-          messagingSenderId: "796429144798",
-          appId: "1:796429144798:web:7896a1989d50b1f3a2e84f",
-          measurementId: "G-2KEDTYW0YV"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        console.log("Firebase is activated");
-
-        
-      </script>
-    
-    </script>
+    <script type="module" src="sign.js"></script>
 
 </body>
 </html>
