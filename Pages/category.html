@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Category Section</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #f1f1f1;
+    }
+
+    .category-section {
+      padding: 40px 10%;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
+    .category-description {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      text-align: center;
+      font-size: 18px;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Our Website</h1>
+  </header>
+
+  <!-- Category Section -->
+  <section class="category-section">
+    <h2>Select a Category</h2>
+    <select id="category-dropdown" onchange="showCategory()">
+      <option value="">-- Choose a Category --</option>
+      <option value="Technology">Technology</option>
+      <option value="Fashion">Fashion</option>
+      <option value="Food">Food</option>
+      <option value="Travel">Travel</option>
+    </select>
+    <div id="category-description" class="category-description">
+      <!-- Description will appear here -->
+    </div>
+  </section>
+
+  <script>
+    function showCategory() {
+      const dropdown = document.getElementById('category-dropdown');
+      const description = document.getElementById('category-description');
+      
+      const categoryName = dropdown.value;
+      let categoryDescription = "";
+
+      switch (categoryName) {
+        case 'Technology':
+          categoryDescription = "Explore the latest in tech trends, gadgets, and innovations.";
+          break;
+        case 'Fashion':
+          categoryDescription = "Stay updated with the most stylish trends and fashion tips.";
+          break;
+        case 'Food':
+          categoryDescription = "Delicious recipes, food trends, and culinary delights.";
+          break;
+        case 'Travel':
+          categoryDescription = "Discover amazing destinations and travel tips for your next adventure.";
+          break;
+        default:
+          categoryDescription = "Please select a category to see details.";
+      }
+      
+      description.textContent = categoryDescription;
+    }
+  </script>
+</body>
+</html>

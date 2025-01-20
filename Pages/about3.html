@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us page</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            top: 0;
+            z-index: 1000;
+            margin-left: auto;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .navbar{
+            background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+            width: 100%;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-title {
+            font-size: 2.8em;
+            color: #ff523b;
+            margin-bottom: 20px;
+        }
+
+        .about-description {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .about-values {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .value-card {
+            background: white;
+            border: none;
+            border-radius: 12px;
+            padding: 30px;
+            width: 280px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .value-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #4CAF50;
+        }
+
+        .value-title {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .value-description {
+            font-size: 1em;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .team-section {
+            margin: 40px auto;
+            text-align: center;
+            background: linear-gradient(135deg, #f0f0f0, #eaeaea);
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-title {
+            font-size: 2.5em;
+            color: #ff523b;
+            margin-bottom: 20px;
+        }
+
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .team-member {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+        }
+
+        .team-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+    
+
+
+        @media (max-width: 768px) {
+            .about-title {
+                font-size: 2.2em;
+            }
+
+            .value-card {
+                width: 90%;
+            }
+
+            .team-member {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <h1><span>EASE</span></h1>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="homepage.html">Home</a></li>
+            
+                    <li ><a href="about3.html">About</a></li>
+                    <!-- <li><a href="">Contact</a></li> -->
+                    <li>
+                        <div class="dropdown">
+                            <a href="#" class="dropbtn">Categories </a>
+                            <div class="dropdown-content">
+                                <a href="technology.html">Technology</a>
+                                <a href="health.html">Health and Fitness</a>
+                                <a href="Equipments.html">Equipments</a>
+                                <a href="education.html">Education</a>
+                                <a href="fashion.html">Fashion</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <a href="#" class="dropbtn">Account</a>
+                            <div class="dropdown-content">
+                                <a href="sign.html">Profile</a>
+                                <a href="user_profile.html">Sign In</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+           <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a> 
+            <img src="images/menu.png" class="menu-icon" onclick="menutoogle()">
+        </div>
+<header>
+    <h1>About Us</h1>
+</header>
+
+<div class="about-container">
+    <h2 class="title"  style="font-size: 50px;">Who We Are</h2>
+    <p class="about-description">
+        Welcome to<strong> EASE.</strong> We are a team of passionate individuals dedicated to
+        making your shopping experience seamless, enjoyable, and personalized. From the latest fashion trends to
+        must-have gadgets, we bring you a curated selection of quality products that enhance your everyday life.
+    </p>
+
+    <div class="about-values">
+        <div class="value-card">
+            <div class="value-icon">🌟</div>
+            <div class="value-title">Quality Products</div>
+            <p class="value-description">
+                Our products are handpicked to ensure the highest standards of quality and reliability.
+            </p>
+        </div>
+
+        <div class="value-card">
+            <div class="value-icon">🚚</div>
+            <div class="value-title">Fast Delivery</div>
+            <p class="value-description">
+                We guarantee timely and reliable delivery for a hassle-free shopping experience.
+            </p>
+        </div>
+
+        <div class="value-card">
+            <div class="value-icon">🔒</div>
+            <div class="value-title">Secure Shopping</div>
+            <p class="value-description">
+                Your privacy and security are our top priorities, ensuring a safe shopping environment.
+            </p>
+        </div>
+
+        <div class="value-card">
+            <div class="value-icon">💬</div>
+            <div class="value-title">Customer Support</div>
+            <p class="value-description">
+                Our dedicated support team is here to assist you with any questions or concerns.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="team-section">
+    <h2 class="title" style="font-size: 50px;">Meet Our Team</h2>
+    <div class="team-grid">
+        <div class="team-member">
+            <img src="https://via.placeholder.com/100" alt="Team Member" class="team-photo">
+            <h3>John Doe</h3>
+            <p>CEO & Founder</p>
+        </div>
+        <div class="team-member">
+            <img src="https://via.placeholder.com/100" alt="Team Member" class="team-photo">
+            <h3>Jane Smith</h3>
+            <p>Marketing Lead</p>
+        </div>
+        <div class="team-member">
+            <img src="https://via.placeholder.com/100" alt="Team Member" class="team-photo">
+            <h3>Emily Brown</h3>
+            <p>Product Manager</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer">
+            <hr>
+            <p class="copyright">Copyright 2020 - E-Commerce</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Add an animation to the value cards on scroll
+    function debounce(func, wait) {
+        let timeout;
+        return function(...args) {
+            const context = this;
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(context, args), wait);
+        };
+    }
+
+    const handleScroll = () => {
+        const cards = document.querySelectorAll(".value-card");
+        const windowHeight = window.innerHeight;
+
+        cards.forEach(card => {
+            const cardTop = card.getBoundingClientRect().top;
+
+            if (cardTop < windowHeight - 100) {
+                card.style.transform = "translateY(0)";
+                card.style.opacity = "1";
+            } else {
+                card.style.transform = "translateY(50px)";
+                card.style.opacity = "0";
+            }
+        });
+    };
+
+    window.addEventListener("scroll", debounce(handleScroll, 100));
+</script>
+
+</body>
+</html>

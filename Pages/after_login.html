@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Website</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+<div class="header-home">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <h1><span>EASE</span></h1>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="after_login.html">Home</a></li>
+            
+                    <li ><a href="about3.html">About</a></li>
+                    <!-- <li><a href="">Contact</a></li> -->
+                    <li>
+                        <div class="dropdown">
+                            <a href="#" class="dropbtn">Categories </a>
+                            <div class="dropdown-content">
+                                <a href="technology.html">Technology</a>
+                                <a href="health.html">Health and Fitness</a>
+                                <a href="Equipments.html">Equipments</a>
+                                <a href="education.html">Education</a>
+                                <a href="fashion.html">Fashion</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <a href="#" class="dropbtn">Account</a>
+                            <div class="dropdown-content">
+                                <a href="user_profile.html">Profile Name</a>
+                                <a href="homepage.html">Sign Out</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+           <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a> 
+            <img src="images/menu.png" class="menu-icon" onclick="menutoogle()">
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <h1>Give your work <br>A new Style!</h1>
+                <p>Success isn't always about greatness. It's about consistency. Consistent <br>hard work gains success. Greatness will come.</p>
+                <a href="fashion.html" class="btn">Explore Now &#8594;</a>
+            </div>
+            <div class="col-2">
+                <img src="images/image1.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!----- slider ----->
+
+<div class="slider">
+    <div class="slides">
+        <!-- Radio buttons for navigation -->
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+        <input type="radio" name="radio-btn" id="radio4">
+
+        <!-- Slide images -->
+        <div class="slide first">
+            <img src="slider/slider0.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="slider/slider1.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="slider/slider2.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="slider/slider3.jpg" alt="">
+        </div>
+
+        <!-- Automatic navigation -->
+        <div class="navigation-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+            <div class="auto-btn4"></div>
+        </div>
+    </div>
+
+    <!-- Manual navigation -->
+    <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+    </div>
+</div>
+
+<!----- featured categories ----->
+<div class="categories">
+    <h2 class="title">Featured Categories</h2>
+    <div class="small-container">
+        <div class="row">
+            <div class="col-3">
+                <a href=""><img  src="images/category-1.jpg" alt="">
+                <h4 style="font-weight: bold; font-size: 20px;  text-align: center;">FASHION</h4></a>
+            </div>
+            <div class="col-3">
+                <a href="technology.html"><img  src="images/category-1.jpg" alt="">
+                    <h4 style="font-weight: bold; font-size: 20px;  text-align: center;">TECHNOLOGY</h4></a>
+            </div>
+            <div class="col-3">
+                <a href="education.html"><img  src="images/category-1.jpg" alt="">
+                    <h4 style="font-weight: bold; font-size: 20px;  text-align: center;">EDUCATION</h4></a>
+            </div>
+        </div>
+    </div>
+</div>
+   
+    <!-------- featured products ------->
+    <div class="small-class">
+        <h2 class="title">Featured Products</h2>
+        <div class="row">
+            <div class="col-4">
+                <a href="product_details.html"><img src="images/product-1.jpg" alt=""></a>
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <p>$50.00</p>
+            </div>
+            </div>
+            <div class="col-4">
+                <img src="images/product-2.jpg" alt="">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <p>$50.00</p>
+            </div>
+            </div>
+            <div class="col-4">
+                <img src="images/product-3.jpg" alt="">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <p>$50.00</p>
+            </div>
+            </div>
+            <div class="col-4">
+                <img src="images/product-4.jpg" alt="">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <p>$50.00</p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Latest Products -->
+        <h2 class="title">Latest Products</h2>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/product-5.jpg" alt="">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <p>$50.00</p>
+            </div>
+            </div>
+            <div class="col-4">
+                <img src="images/product-6.jpg" alt="">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <p>$50.00</p>
+            </div>
+            </div>
+            <div class="col-4">
+                <img src="images/product-7.jpg" alt="">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <p>$50.00</p>
+            </div>
+            </div>
+            <div class="col-4">
+                <img src="images/product-8.jpg" alt="">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <p>$50.00</p>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src="images/product-9.jpg" alt="">
+                    <h4>Red Printed T-Shirt</h4>
+                    <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <p>$50.00</p>
+                </div>
+                </div>
+                <div class="col-4">
+                    <img src="images/product-10.jpg" alt="">
+                    <h4>Red Printed T-Shirt</h4>
+                    <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <p>$50.00</p>
+                </div>
+                </div>
+                <div class="col-4">
+                    <img src="images/product-11.jpg" alt="">
+                    <h4>Red Printed T-Shirt</h4>
+                    <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <p>$50.00</p>
+                </div>
+                </div>
+                <div class="col-4">
+                    <img src="images/product-12.jpg" alt="">
+                    <h4>Red Printed T-Shirt</h4>
+                 <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <p>$50.00</p>
+                 </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!----- offer ----->
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="images/exclusive.png" class="offer-img">
+                </div>
+                <div class="col-2">
+                    <p>Exclusively Available on EASE</p>
+                    <h1>Smart Band 4</h1>
+                    <small>The Mi Smart Band 4 features a 39.9% larger (than Mi Band 3) AMOLED color full-touch display with adjustable brightness, so everything is clear as can be.</small>
+                    <a href="product_details.html" class="btn">Buy Now &#8594;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!--------- Testimonial ------------>
+<div class="testimonial">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem enim modi, laborum iure perspiciatis officiis labore corporis numquam maiores? Explicabo possimus ratione nemo, repellendus totam eligendi fuga. Eligendi, nisi maiores.</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                 </div>
+                 <img src="images/user-1.png" alt="">
+                 <h3>Sean Parker</h3>
+            </div>
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem enim modi, laborum iure perspiciatis officiis labore corporis numquam maiores? Explicabo possimus ratione nemo, repellendus totam eligendi fuga. Eligendi, nisi maiores.</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    
+                 </div>
+                    <img src="images/user-2.png" alt="">
+                    <h3>Mike Smith</h3>
+               </div>
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem enim modi, laborum iure perspiciatis officiis labore corporis numquam maiores? Explicabo possimus ratione nemo, repellendus totam eligendi fuga. Eligendi, nisi maiores.</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                 </div>
+                    <img src="images/user-3.png" alt="">
+                    <h3>Mabel Joe</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------- brands ------->
+<div class="brands">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-5">
+                <img src="images/logo-godrej.png" alt="">
+            </div>
+            <div class="col-5">
+                <img src="images/logo-oppo.png" alt="">
+            </div>
+            <div class="col-5">
+                <img src="images/logo-coca-cola.png" alt="">
+            </div>
+            <div class="col-5">
+                <img src="images/logo-paypal.png" alt="">
+            </div>
+            <div class="col-5">
+                <img src="images/logo-philips.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+        <hr>
+        <p class="copyright">©  Copyright 2025 - EASE</p>
+    </div>
+</div>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAhn14EKHrbFFqI0pIG8iefRny2M2SXlOs",
+      authDomain: "e-commerce-22108.firebaseapp.com",
+      projectId: "e-commerce-22108",
+      storageBucket: "e-commerce-22108.firebasestorage.app",
+      messagingSenderId: "796429144798",
+      appId: "1:796429144798:web:7896a1989d50b1f3a2e84f",
+      measurementId: "G-2KEDTYW0YV"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    console.log("Firebase is activated");
+  </script>
+
+
+
+<script src="homepage.js"></script>
+  
+</body>
+</html>

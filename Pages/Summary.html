@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Page</title>
+    <link rel="stylesheet" href="Summary.css">
+</head>
+<body>
+    <div class="col-25">
+        <div class="container">
+          <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
+          <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+          <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+          <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+          <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+          <hr>
+          <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+        </div>
+        <input type="submit" value="Submit" class="btn" id="submitBtn">
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="submitModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Submission Confirmation</h2>
+            <p>Are you sure you want to submit your order?</p>
+            <button id="confirmSubmit" class="btn">Yes, Submit</button>
+        </div>
+    </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    var modal = document.getElementById("submitModal");
+    var btn = document.getElementById("submitBtn");
+    var span = document.getElementsByClassName("close")[0];
+    var confirmBtn = document.getElementById("confirmSubmit");
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    confirmBtn.onclick = function() {
+        modal.style.display = "none";
+        alert("Thank you. Order Submitted!");
+        // Add your order submission logic here
+        window.location.href = "after_login.html"; // Redirect to homepage
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
+    </script>
+</body>
+</html>

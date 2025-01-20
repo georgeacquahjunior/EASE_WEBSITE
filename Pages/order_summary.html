@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Checkout Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .summary {
+            margin: 20px 0;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+
+        .summary-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        .summary-item .details {
+            display: flex;
+            align-items: center;
+        }
+
+        .summary-item .details span {
+            display: block;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-control button {
+            background-color: #ddd;
+            border: none;
+            padding: 5px 10px;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+
+        .quantity-control button:hover {
+            background-color: #ccc;
+        }
+
+        .total {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .checkout-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+
+        .checkout-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .promo {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .promo input {
+            padding: 10px;
+            width: calc(100% - 120px);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .promo button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .promo button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Order Summary</h1>
+        <div class="summary" id="summary-container">
+            <!-- Summary items will be dynamically inserted here -->
+        </div>
+        <div class="promo">
+            <input type="text" id="promo-code" placeholder="Enter promo code">
+            <button onclick="applyPromoCode()">Apply</button>
+        </div>
+        <div class="total" id="total-price">Total: $0.00</div>
+        <a href="#" class="checkout-btn">Proceed to Payment</a>
+    </div>
+
+    <script>
+        const cartItems = [
+            { id: 1, name: "Product 1", quantity: 2, price: 19.99, image: "https://via.placeholder.com/50" },
+            { id: 2, name: "Product 2", quantity: 1, price: 49.99, image: "https://via.placeholder.com/50" },
+            { id: 3, name: "Product 3", quantity: 3, price: 9.99, image: "https://via.placeholder.com/50" }
+        ];
+
+        const promoDiscount = 0.1; // 10% discount for promo code
+
+        function formatPrice(price) {
+            return `$${price.toFixed(2)}`;
+        }
+
+        function calculateTotal(items) {
+            return items.reduce((total, item) => total + item.quantity * item.price, 0);
+        }
+
+        function renderSummary(items) {
+            const summaryContainer = document.getElementById("summary-container");
+            summaryContainer.innerHTML = "";
+
+            items.forEach(item => {
+                const itemElement = document.createElement("div");
+                itemElement.classList.add("summary-item");
+                itemElement.innerHTML = `
+                    <div class="details">
+                        <img src="${item.image}" alt="${item.name}">
+                        <span>${item.name} (x${item.quantity})</span>
+                    </div>
+                    <div>
+                        <div class="quantity-control">
+                            <button onclick="updateQuantity(${item.id}, -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="updateQuantity(${item.id}, 1)">+</button>
+                        </div>
+                        <span>${formatPrice(item.quantity * item.price)}</span>
+                    </div>
+                `;
+                summaryContainer.appendChild(itemElement);
+            });
+
+            updateTotal(items);
+        }
+
+        function updateTotal(items) {
+            const totalElement = document.getElementById("total-price");
+            totalElement.textContent = `Total: ${formatPrice(calculateTotal(items))}`;
+        }
+
+        function updateQuantity(id, change) {
+            const item = cartItems.find(item => item.id === id);
+            if (item) {
+                item.quantity = Math.max(1, item.quantity + change);
+                renderSummary(cartItems);
+            }
+        }
+
+        function applyPromoCode() {
+            const promoCode = document.getElementById("promo-code").value;
+            if (promoCode.toLowerCase() === "save10") {
+                const discountedTotal = calculateTotal(cartItems) * (1 - promoDiscount);
+                document.getElementById("total-price").textContent = `Total (after discount): ${formatPrice(discountedTotal)}`;
+                alert("Promo code applied successfully!");
+            } else {
+                alert("Invalid promo code.");
+            }
+        }
+
+        renderSummary(cartItems);
+    </script>
+</body>
+</html>

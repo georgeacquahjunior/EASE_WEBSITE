@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Dropdown</title>
+    <style>
+        /* Style for the dropdown container */
+        .account-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Style for the dropdown content */
+        .dropdown-content {
+            display: none;
+            color: black;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            min-width: 200px;
+            right: 0; /* Align to the right for e-commerce account menus */
+        }
+
+        /* Style for links in the dropdown */
+        .dropdown-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 10px 16px;
+            font-size: 14px;
+        }
+
+        /* Change link color on hover */
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Show the dropdown on hover */
+        .account-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Style for the account button */
+        .account-dropdown > a {
+            cursor: pointer;
+            padding: 10px 16px;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+        }
+
+        .account-dropdown > a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>E-commerce Homepage</h1>
+        <nav>
+            <div class="account-dropdown">
+                <a href="#">Account</a>
+                <div class="dropdown-content">
+                    <a href="/profile">My Profile</a>
+                    <a href="/orders">My Orders</a>
+                    <a href="/wishlist">Wishlist</a>
+                    <a href="/cart">Cart</a>
+                    <a href="/logout">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>
