@@ -3,32 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details Page</title>
+    <title>Home Page</title>
     <link rel="stylesheet" href="homepage.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     
 </head>
 <body>
-<div class="header" style="background: none;">
     <div class="container">
         <div class="navbar">
             <div class="logo">
-                <img src="images/logo.png" width="125px">
+                <h1><span>EASE</span></h1>
             </div>
             <nav>
                 <ul id="MenuItems">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Products</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li><a href=""> Account</a></li>
+                    <li><a href="homepage.html">Home</a></li>
+            
+                    <li ><a href="about3.html">About</a></li>
+                    <!-- <li><a href="">Contact</a></li> -->
+                    <li>
+                        <div class="dropdown">
+                            <a href="#" class="dropbtn">Categories </a>
+                            <div class="dropdown-content">
+                                <a href="technology.html">Technology</a>
+                                <a href="health.html">Health and Fitness</a>
+                                <a href="Equipments.html">Equipments</a>
+                                <a href="education.html">Education</a>
+                                <a href="fashion.html">Fashion</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <a href="#" class="dropbtn">Account</a>
+                            <div class="dropdown-content">
+                                <a href="sign.html">Sign In</a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
-            <img src="images/cart.png" width="30px" height="30px">
+           <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a> 
             <img src="images/menu.png" class="menu-icon" onclick="menutoogle()">
-    </div>
-</div>
+        </div>
 
 <!---------single product details---------->
 
@@ -52,7 +69,9 @@
         </div>
     </div>
 
-
+    <style>
+       
+    </style>
 
 
         </div>
@@ -70,6 +89,11 @@
             </select>
             <input type="number" value="1">
             <a href="" class="btn">Add To Cart</a>
+            <div id="popup" class="popup">
+                <p style="color: white;">Item added to cart!</p>
+                <button onclick="closePopup()">Close</button>
+            
+            </div>
 
             <h3>Product Details<i class="fa fa-indent"></i></h3>
             <br>
@@ -140,45 +164,39 @@
 
     
 <!-- footer -->
-<div class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="footer-col-1">
-                <h3>Download our App</h3>
-                <p>Download App for Android and ios mobile phone.</p>
-                <div class="app-logo">
-                    <img src="images/play-store.png" alt="">
-                    <img src="images/app-store.png" alt="">
-                </div>
-            </div>
-            <div class="footer-col-2">
-                <img src="images/logo-white.png" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-            </div>
-            <div class="footer-col-3">
-                <h3>Useful Links</h3>
-                <ul>
-                    <li>Coupons</li>
-                    <li>Blog Post</li>
-                    <li>Return Policy</li>
-                    <li>Join Affiliates</li>
-                </ul>
-            </div>
-             <div class="footer-col-3">
-                <h3>Follow Us</h3>
-                <ul>
-                    <li>Facebook</li>
-                    <li>Twitter</li>
-                    <li>Instagram</li>
-                    <li>YouTube</li>
-                </ul>
-            </div>
-        </div>
-        <hr>
-        <p class="copyright">Copyright 2020 - E-Commerce</p>
-    </div>
+<div class="footer" style="width: 1300px;">
+    <hr>
+    <p class="copyright">©  Copyright 2025 - EASE</p>
 </div>
+</div>
+<script>
+    function showPopup() {
+        document.getElementById("popup").style.display = "block";
+    }
 
-    <script src="homepage.js"></script>
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    document.querySelector(".btn").addEventListener("click", function(event) {
+        event.preventDefault();
+        showPopup();
+    });
+</script>
+
+<!-- // make it automatically close after 3 seconds -->
+<script>
+    function autoClosePopup() {
+        setTimeout(closePopup, 3000); // Closes the popup after 3 seconds
+    }
+
+    document.querySelector(".btn").addEventListener("click", function(event) {
+        event.preventDefault();
+        showPopup();
+        autoClosePopup();
+    });
+</script>
+
+<script src="homepage.js"></script>
 </body>
 </html>

@@ -42,3 +42,5 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+
+// add to cart

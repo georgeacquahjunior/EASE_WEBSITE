@@ -1,5 +1,4 @@
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -58,48 +57,49 @@
             <th>Quantity</th>
             <th>Subtotal</th>
         </tr>
-        <tr>
+        <tr class="cart-item">
             <td>
                 <div class="cart-info">
                     <img src="cart/buy-1.jpg" alt="">
                     <div>
                         <p>Red Printed Tshirt</p>
                         <small>Price: $50.00</small> <br>
-                        <a href="">Remove</a>
+                        <a href="#" class="remove-btn">Remove</a>
                     </div>
                 </div>
             </td>
             <td><input type="number" value="1"></td>
             <td>$50.00</td>
         </tr>
-        <tr>
+        <tr class="cart-item">
             <td>
                 <div class="cart-info">
                     <img src="cart/buy-2.jpg" alt="">
                     <div>
                         <p>Red Printed Tshirt</p>
                         <small>Price: $50.00</small> <br>
-                        <a href="">Remove</a>
+                        <a href="#" class="remove-btn">Remove</a>
                     </div>
                 </div>
             </td>
             <td><input type="number" value="1"></td>
             <td>$50.00</td>
         </tr>
-        <tr>
+        <tr class="cart-item">
             <td>
                 <div class="cart-info">
-                    <img src="cart/buy-3.jpg" alt="">
+                    <img src="cart/buy-2.jpg" alt="">
                     <div>
                         <p>Red Printed Tshirt</p>
                         <small>Price: $50.00</small> <br>
-                        <a href="">Remove</a>
+                        <a href="#" class="remove-btn">Remove</a>
                     </div>
                 </div>
             </td>
             <td><input type="number" value="1"></td>
             <td>$50.00</td>
         </tr>
+       
     </table>
     <div class="total-price">
         <table>
@@ -133,5 +133,17 @@
 </div>
 
     <script src="homepage.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const removeButtons = document.querySelectorAll(".remove-btn");
+            removeButtons.forEach(function(button) {
+                button.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    const cartItem = button.closest(".cart-item");
+                    cartItem.remove();
+                });
+            });
+        });
+    </script>
 </body>
 </html>
