@@ -48,4 +48,3 @@ You should now see the EASE E-commerce Website running locally on your machine.
 
 ### Checkout Page
 ![Checkout Page](path/to/checkout-page-screenshot.jpg)
-
