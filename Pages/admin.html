@@ -31,6 +31,19 @@
             font-size: 1.8em;
         }
 
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            transition: background 0.3s;
+        }
+
+        .sidebar a:hover {
+            background: #34495e;
+        }
+
         .sidebar ul {
             list-style: none;
             padding: 0;
@@ -167,6 +180,8 @@
 <body>
     <div class="sidebar">
         <h2>Admin Dashboard</h2>
+        <a href="homepage.html">Go to Homepage</a>
+        <!-- Add other sidebar links here -->
         <ul>
             <li class="active" onclick="showSection('products', this)">Manage Products</li>
             <li onclick="showSection('users', this)">Manage Users</li>

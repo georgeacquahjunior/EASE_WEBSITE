@@ -29,9 +29,7 @@
 
         .registration-container h2 {
             margin: 0 0 20px;
-            font-size: 1.8em;
-            color: #ff523b;
-            text-align: center;
+            font-weight: 500;
         }
 
         .form-group {
@@ -44,16 +42,21 @@
             font-weight: 500;
         }
 
-        .form-group input {
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1em;
+            font-family: 'Roboto', sans-serif;
         }
 
-        .form-group input:focus {
-                border-color: #ff523b;
+        .form-group input::placeholder, .form-group select::placeholder, .form-group textarea::placeholder {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: #ff523b;
             outline: none;
             box-shadow: 0 0 5px rgba(21, 101, 192, 0.3);
         }
@@ -66,19 +69,16 @@
             background-color: #ff523b;
             border: none;
             border-radius: 5px;
-            cursor: pointer;
             font-size: 1em;
-            transition: background-color 0.3s, box-shadow 0.2s;
-            text-align: center;
+            cursor: pointer;
         }
 
         .button:hover {
-            background-color: #6b2307;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+            background-color: #ff331b;
         }
 
-        .form-group .error {
-            color: #bd3b08;
+        .error {
+            color: red;
             font-size: 0.9em;
             margin-top: 5px;
         }
@@ -89,26 +89,34 @@
         <h2>Seller Registration</h2>
         <form id="sellerRegistrationForm">
             <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" placeholder="Enter your full name">
-                <div class="error" id="nameError"></div>
+                <label for="category">Category</label>
+                <select id="category">
+                    <option value="">Select a category</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="home">Home</option>
+                    <option value="books">Books</option>
+                    <option value="health">Health</option>
+                </select>
+                <div class="error" id="categoryError"></div>
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email">
-                <div class="error" id="emailError"></div>
+                <label for="productName">Product Name</label>
+                <input type="text" id="productName" placeholder="Enter your product name">
+                <div class="error" id="productNameError"></div>
             </div>
             <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="text" id="phone" placeholder="Enter your phone number">
-                <div class="error" id="phoneError"></div>
+                <label for="productDescription">Product Description</label>
+                <textarea id="productDescription" placeholder="Enter product description"></textarea>
+                <div class="error" id="productDescriptionError"></div>
             </div>
             <div class="form-group">
-                <label for="storeName">Store Name</label>
-                <input type="text" id="storeName" placeholder="Enter your store name">
-                <div class="error" id="storeNameError"></div>
+                <label for="productPhotos">Upload Photos</label>
+                <input type="file" id="productPhotos" multiple>
+                <div class="error" id="productPhotosError"></div>
             </div>
             <button type="button" class="button" onclick="registerSeller()">Register</button>
+        <div class="form-group"></div>
         </form>
     </div>
 
@@ -125,22 +133,33 @@
             }
         }
 
+        function validateSelect(id, errorId, errorMessage) {
+            const select = document.getElementById(id);
+            const errorElement = document.getElementById(errorId);
+            if (!select.value) {
+                errorElement.textContent = errorMessage;
+                return false;
+            } else {
+                errorElement.textContent = '';
+                return true;
+            }
+        }
+
         function registerSeller() {
-            const isNameValid = validateInput('name', 'nameError', 'Name is required.');
-            const isEmailValid = validateInput('email', 'emailError', 'Email is required.');
-            const isPhoneValid = validateInput('phone', 'phoneError', 'Phone number is required.');
-            const isStoreNameValid = validateInput('storeName', 'storeNameError', 'Store name is required.');
+            const isCategoryValid = validateSelect('category', 'categoryError', 'Category is required.');
+            const isProductNameValid = validateInput('productName', 'productNameError', 'Product name is required.');
+            const isProductDescriptionValid = validateInput('productDescription', 'productDescriptionError', 'Product description is required.');
+            const isProductPhotosValid = document.getElementById('productPhotos').files.length > 0;
 
-            if (isNameValid && isEmailValid && isPhoneValid && isStoreNameValid) {
-                const sellerData = {
-                    name: document.getElementById('name').value,
-                    email: document.getElementById('email').value,
-                    phone: document.getElementById('phone').value,
-                    storeName: document.getElementById('storeName').value
-                };
+            if (!isProductPhotosValid) {
+                document.getElementById('productPhotosError').textContent = 'At least one photo is required.';
+            } else {
+                document.getElementById('productPhotosError').textContent = '';
+            }
 
-                alert('Seller registered successfully!\n' + JSON.stringify(sellerData, null, 2));
-                document.getElementById('sellerRegistrationForm').reset();
+            if (isCategoryValid && isProductNameValid && isProductDescriptionValid && isProductPhotosValid) {
+                // Proceed with form submission or further processing
+                window.location.href = 'admin.html';
             }
         }
     </script>
