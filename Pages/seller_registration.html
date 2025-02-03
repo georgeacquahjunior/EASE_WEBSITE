@@ -87,7 +87,7 @@
 <body>
     <div class="registration-container">
         <h2>Seller Registration</h2>
-        <form id="sellerRegistrationForm">
+        <form>
             <div class="form-group">
                 <label for="category">Category</label>
                 <select id="category">
@@ -116,7 +116,6 @@
                 <div class="error" id="productPhotosError"></div>
             </div>
             <button type="button" class="button" onclick="registerSeller()">Register</button>
-        <div class="form-group"></div>
         </form>
     </div>
 
@@ -158,7 +157,7 @@
             }
 
             if (isCategoryValid && isProductNameValid && isProductDescriptionValid && isProductPhotosValid) {
-                // Proceed with form submission or further processing
+                // Redirect to admin page
                 window.location.href = 'admin.html';
             }
         }
