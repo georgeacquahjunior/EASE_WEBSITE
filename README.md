@@ -5,7 +5,7 @@ Creating First fully functional website
 The purpose of this website is to give users an easy and smooth experience while using its features and services. It aims to be a complete platform that meets the needs of its users by offering useful content, simple navigation, and interactive parts. The website is made to work well, look good on all devices, and be easy for everyone to use. Additionally, it aims to thrive in a competitive market by continuously improving and adapting to user needs.
 
 ## Team Members
-![Team Picture](images/group.jpg)
+![Team Picture](pages\group.jpg)
 
 ## Step-by-step instructions on how to run the application
 
